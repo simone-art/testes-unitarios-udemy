@@ -22,7 +22,7 @@ public class LocalServiceTest {
         Locacao locacao = locacaoService.alugarFilme(usuario, filme);
 
         // Definir a verificação de acordo com o cenário esperado
-        Assertions.assertTrue(locacao.getValor() == 5);
+        Assertions.assertEquals(locacao.getValor(), 5);
         Assertions.assertTrue(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()));
         Assertions.assertTrue(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
 

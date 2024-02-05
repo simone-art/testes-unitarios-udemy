@@ -55,6 +55,6 @@ public class AsserTest {
 
         //certifica que o objeto não seja vazio
         Assert.assertNotNull(u2);
-        
+
     }
 }
