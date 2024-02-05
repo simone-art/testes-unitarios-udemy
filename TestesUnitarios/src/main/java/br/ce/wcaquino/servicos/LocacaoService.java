@@ -32,22 +32,4 @@ public class LocacaoService {
 		return locacao;
 	}
 
-	@Test
-	public void teste() {
-		// Definir cenários
-		LocacaoService locacaoService = new LocacaoService();
-		Usuario usuario = new Usuario("Roberto");
-		Filme filme = new Filme("Filme 1", 2, 5.0);
-
-		// Definir a ação/Neste caso chamar o método a ser testado
-		Locacao locacao = locacaoService.alugarFilme(usuario, filme);
-
-		// Definir a verificação de acordo com o cenário esperado
-		Assertions.assertTrue(locacao.getValor() == 5);
-		Assertions.assertTrue(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()));
-		Assertions.assertTrue(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
-
-
-
-	}
 }
