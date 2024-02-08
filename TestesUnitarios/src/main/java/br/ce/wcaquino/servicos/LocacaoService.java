@@ -1,21 +1,16 @@
 package br.ce.wcaquino.servicos;
 
 import static br.ce.wcaquino.utils.DataUtils.adicionarDias;
-
-import java.lang.reflect.Modifier;
 import java.util.Date;
 
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
-import br.ce.wcaquino.utils.DataUtils;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 public class LocacaoService {
 
 	public Locacao alugarFilme(Usuario usuario, Filme filme) throws Exception {
-		if(filme.getEstoque() == null){
+		if(filme.getEstoque() == 0){
 			throw new Exception("Este filme não existe na locação");
 		}
 
