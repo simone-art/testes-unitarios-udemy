@@ -13,8 +13,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LocacaoService {
-	
-	public Locacao alugarFilme(Usuario usuario, Filme filme) {
+
+	public Locacao alugarFilme(Usuario usuario, Filme filme) throws Exception {
+		if(filme.getEstoque() == null){
+			throw new Exception("Este filme não existe na locação");
+		}
+
+
 		Locacao locacao = new Locacao();
 		locacao.setFilme(filme);
 		locacao.setUsuario(usuario);
